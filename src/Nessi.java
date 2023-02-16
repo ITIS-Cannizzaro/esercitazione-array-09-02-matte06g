@@ -7,6 +7,7 @@ public class Nessi
 	static double[] arraytwo = new double[5];
 	static double[] arraythree = new double [10];
 	static double[]arrayfour  = new double [10];
+	static double[]banana=new double[10];
 	public static void main(String[] args)
 	{
 		while(true)
@@ -19,7 +20,7 @@ public class Nessi
 					es1();
 				break;
 				case 2:
-					es2(arrayfour);
+					es2(arrayfour,banana);
 
 					
 				break;
@@ -85,20 +86,17 @@ public class Nessi
 		V[a] = V[b];
 		V[b] = temp;
 	}
-	static void es2(double[]a)
-	{
-		
-		for(int i = 0; i <arrayfour.length;i++)
+	static void es2(double[]a,double[]b)
+	{		
+		for(int i = 0; i <a.length;i++)
 		{
-			arrayfour[i]=Math.random()*20-10;
-			System.out.println(arrayfour[i]);
+			a[i]=Math.random()*20-10;
+			System.out.println(a[i]);
 		}
-		double[]b=new double[10];
 		int contatore = -1;
 		for(int i = 0; i < a.length;i++)
-		{
-			
-			if(a[i]>= 0.000000000000000)
+		{			
+			if(a[i]>= 0)
 			{
 				contatore += 1;
 				b[contatore]=a[i];
@@ -114,7 +112,7 @@ public class Nessi
 				}
 			}
 		}
-		for(int i =0; i < contatore; i++)
+		for(int i =0; i <= contatore; i++)
 		{
 			System.out.println("Elementi maggiori uguali a 0 riordinati:" +b[i]);
 		}
